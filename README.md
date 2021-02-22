@@ -17,4 +17,4 @@ sys
 This script was inspired by things I learned from...  
 [Budrich: i3 floating mode listener](https://github.com/budRich/i3ipc-python/blob/master/examples/floating-mode.py)  
 [Aduros: i3 two column layout](https://github.com/aduros/dotfiles/blob/master/home/.config/i3/column-layout)  
-[Aduros: promote window script](https://github.com/aduros/dotfiles/blob/master/home/.config/i3/promote-window)  
+[Aduros: i3 promote window](https://github.com/aduros/dotfiles/blob/master/home/.config/i3/promote-window)  
