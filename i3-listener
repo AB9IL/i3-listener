@@ -8,9 +8,9 @@
 # Float windows manually, but center and size in proportion to
 # screen resolution.
 
+import sys
 import pyautogui
 from i3ipc import Connection, Event
-import sys
 
 i3 = Connection()
 COLUMNS = 2
@@ -21,16 +21,16 @@ WINDOW_COMMAND = 'resize set ' + WINDOW_WIDTH + ' ' + WINDOW_HEIGHT + ', move ab
 
 
 def window_resize(i3, event):
-    window = i3.get_tree().find_by_id(reply.ipc_data["id"]).workspace()
-    if floating == "user_on":
+    focused = i3.get_tree().find_focused().floating
+    if focused == "user_on":
         event.container.command(WINDOW_COMMAND)
 
 def move_container (con1, con2):
-    con2.command("mark __column-layout");
+    con2.command("mark __column-layout")
     con1.command("move window to mark __column-layout")
-    con2.command("unmark __column-layout");
+    con2.command("unmark __column-layout")
 
-def layout (i3, event):
+def layout(i3, event):
     if event.change == "close":
         for reply in i3.get_workspaces():
             if reply.focused:
